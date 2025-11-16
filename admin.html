@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetim Paneli - Şenköy Doğal</title>
+    <link rel="stylesheet" href="style.css?v=11"> 
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" defer></script>
+</head>
+<body class="admin-body"> <div id="password-prompt">
+        <div class="login-box">
+            <h2>Yönetici Girişi</h2>
+            <p>Lütfen devam etmek için şifrenizi girin.</p>
+            <input type="password" id="password-input" placeholder="Şifre...">
+            <button id="password-submit" class="cta-button">Giriş Yap</button>
+            <p id="password-error"></p>
+        </div>
+    </div>
+
+    <div id="admin-panel" style="display: none;">
+        <header class="admin-header">
+            <div class="container">
+                <h1>Şenköy Doğal - Yorum Yönetim Paneli</h1>
+                <button id="logout-button" class="cta-button-menu">Çıkış Yap</button>
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="admin-section">
+                <h2>Onay Bekleyen Yorumlar</h2>
+                <div id="pending-comments-list">
+                    </div>
+            </section>
+
+            <section class="admin-section">
+                <h2>Onaylanmış Yorumlar (Yayında Olanlar)</h2>
+                <div id="approved-comments-list">
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="admin.js?v=11" defer></script>
+
+</body>
+</html>

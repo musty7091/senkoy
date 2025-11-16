@@ -163,12 +163,10 @@ header nav a:hover { color: #d9534f; }
 .add-to-cart-btn:hover { background-color: #1a3311; }
 .add-to-cart-btn.added { background-color: #d9534f; }
 
-/* ***** MÜŞTERİ YORUMLARI STİLLERİ ***** */
+/* --- MÜŞTERİ YORUMLARI STİLLERİ --- */
 #yorumlar .container {
-    max-width: 800px; /* Yorum ve form alanını okunaklı tutar */
+    max-width: 800px;
 }
-
-/* Yorum Listeleme Alanı */
 #comments-list {
     text-align: left;
     margin-bottom: 40px;
@@ -192,8 +190,6 @@ header nav a:hover { color: #d9534f; }
     font-weight: 700;
     color: #2c541d;
 }
-
-/* Yeni Yorum Formu Stilleri */
 #comment-form {
     background-color: #fcfaf8;
     border: 1px solid #eee;
@@ -228,7 +224,7 @@ header nav a:hover { color: #d9534f; }
     border-radius: 5px;
 }
 .form-group textarea {
-    resize: vertical; /* Sadece dikeyde büyüsün */
+    resize: vertical;
 }
 #comment-form .cta-button {
     width: 100%;
@@ -241,16 +237,10 @@ header nav a:hover { color: #d9534f; }
     font-weight: 600;
     margin-top: 20px;
 }
-#form-status-message.success {
-    color: #2c541d; /* Koyu yeşil */
-}
-#form-status-message.error {
-    color: #d9534f; /* Nar kırmızısı */
-}
-/* ***** YORUM STİLLERİ BİTTİ ***** */
+#form-status-message.success { color: #2c541d; }
+#form-status-message.error { color: #d9534f; }
 
-
-/* ***** SSS (FAQ) BÖLÜMÜ STİLLERİ ***** */
+/* --- SSS (FAQ) BÖLÜMÜ STİLLERİ --- */
 .faq-section {
     background-color: #fff;
 }
@@ -312,7 +302,6 @@ header nav a:hover { color: #d9534f; }
 .faq-answer p {
     padding: 25px 0;
 }
-/* ***** SSS STİLLERİ BİTTİ ***** */
 
 /* --- Sipariş (CTA) Bölümü --- */
 .cta-section { background-color: #2c541d; color: #fff; text-align: center; }
@@ -332,7 +321,7 @@ footer {
 }
 footer p { margin: 5px 0; }
 
-/* YÜZEN SEPET İKONU */
+/* --- YÜZEN SEPET İKONU --- */
 #cart-button {
     position: fixed;
     bottom: 20px;
@@ -356,6 +345,138 @@ footer p { margin: 5px 0; }
     display: flex; justify-content: center; align-items: center;
     border: 2px solid #fff;
 }
+
+
+/* =================================================
+ YENİ EKLENEN ADMİN PANELİ STİLLERİ
+=================================================
+*/
+.admin-body {
+    background-color: #f0f2f5; /* Admin paneli için farklı arka plan */
+}
+#password-prompt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+.login-box h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+.login-box p {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1rem;
+}
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.login-box .cta-button {
+    width: 100%;
+    font-size: 1.1rem;
+}
+#password-error {
+    color: #d9534f;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    margin-bottom: 0; /* p'den gelen margin'i sıfırla */
+}
+
+.admin-header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.admin-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.admin-header h1 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.admin-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.admin-section h2 {
+    font-size: 1.5rem;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.admin-comment-item {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background-color: #fcfaf8;
+}
+.admin-comment-item p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.admin-comment-item p:first-of-type {
+    font-weight: 600;
+}
+.admin-comment-item span {
+    font-size: 0.9rem;
+    color: #777;
+    font-family: monospace;
+}
+.admin-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+.admin-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.admin-btn.approve {
+    background-color: #2c541d;
+    color: #fff;
+}
+.admin-btn.approve:hover {
+    background-color: #1a3311;
+}
+.admin-btn.delete {
+    background-color: #d9534f;
+    color: #fff;
+}
+.admin-btn.delete:hover {
+    background-color: #b9403d;
+}
+
 
 /* --- Mobil Cihazlar (Responsive) --- */
 @media (max-width: 768px) {
@@ -385,4 +506,23 @@ footer p { margin: 5px 0; }
     .faq-question::after { right: 20px; }
     .faq-answer { padding: 0 20px; }
     .faq-answer p { padding: 20px 0; font-size: 1rem; }
+    
+    /* Admin paneli mobil ayarları */
+    .admin-header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .admin-header h1 {
+        font-size: 1.3rem;
+    }
+    .admin-section {
+        padding: 20px;
+    }
+    .admin-actions {
+        flex-direction: column;
+    }
+    .admin-btn {
+        width: 100%;
+        padding: 12px;
+    }
 }
