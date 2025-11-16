@@ -6,31 +6,25 @@
     <title>Şenköy Doğal Ürünleri - Bahçemizden Sofranıza</title>
     <meta name="description" content="Hatay Şenköy'deki kendi bahçemizden ve köy halkımızın doğal ürünleri. Zeytinyağı, Nar Ekşisi, Şenköy Peyniri ve fazlası.">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     
-    <!-- Kendi CSS Dosyamız -->
-    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="style.css?v=12">
 
-    <!-- Firebase Kütüphaneleri -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" defer></script>
     
 </head>
 <body>
 
-    <!-- 1. GİRİŞ EKRANI (SPLASH SCREEN) -->
     <div id="splash-screen">
         <img src="img/logo.png" alt="Şenköy Doğal Logo" class="splash-logo">
         <button id="enter-button" class="cta-button">Lezzeti Keşfet</button>
     </div>
 
-    <!-- 2. ANA SİTE İÇERİĞİ (Başlangıçta gizli) -->
     <div id="main-content">
 
-        <!-- Header (Logo ve Menü) -->
         <header>
             <div class="container">
                 <a href="#home" class="logo-link">
@@ -46,7 +40,6 @@
             </div>
         </header>
 
-        <!-- Hero (Ana Giriş Alanı) -->
         <section class="hero" id="home">
             <div class="hero-content">
                 <h1>Hatay Şenköy Bahçemizden Sofranıza</h1>
@@ -55,11 +48,9 @@
             </div>
         </section>
 
-        <!-- Hikayemiz -->
         <section id="hikayemiz" class="content-section">
             <div class="container">
                 <h2>Bizim Hikayemiz</h2>
-                <!-- ... Hikaye metni (değişiklik yok) ... -->
                 <p style="text-align: left; max-width: 800px; margin: 0 auto 20px auto;">
                     Bu bahçe, bizim köklerimiz. Hatay Şenköy'ün bereketli topraklarında, rüzgar değirmenlerinin daimi şahitliğinde uzanan, bize ailemizden kalan en değerli miras.
                 </p>
@@ -87,11 +78,9 @@
             </div>
         </section>
 
-        <!-- Ürünlerimiz -->
         <section id="urunler" class="product-section">
             <div class="container">
                 <h2>Ürünlerimiz</h2>
-                <!-- ... Tüm ürün kartları (değişiklik yok) ... -->
                 <h3 class="product-category-title">Bizim Bahçemizden</h3>
                 <div class="product-grid">
                     <div class="product-card" data-name="Doğal Zeytinyağı (1L)"><img src="img/zeytinyagi.jpg" alt="Doğal Soğuk Sıkım Zeytinyağı"><h3>Doğal Zeytinyağı (1L)</h3><p>Kendi zeytin ağaçlarımızdan, mevsiminde elle toplanan zeytinlerden elde edilen soğuk sıkım, düşük asitli zeytinyağı.</p><div class="product-card-actions"><input type="number" class="quantity-input" value="1" min="1"><button class="add-to-cart-btn">Listeye Ekle</button></div></div>
@@ -107,18 +96,14 @@
             </div> 
         </section> 
 
-        <!-- MÜŞTERİ YORUMLARI -->
         <section id="yorumlar" class="content-section">
             <div class="container">
                 <h2>Sizden Gelenler</h2>
                 <p style="max-width: 800px; margin: 0 auto 30px auto;">Ürünlerimizi deneyimleyen misafirlerimizin yorumları. Siz de deneyimlerinizi paylaşarak bize destek olabilirsiniz.</p>
                 
-                <!-- Onaylanan Yorumların Gösterileceği Alan -->
                 <div id="comments-list">
-                    <!-- Yorumlar buraya JavaScript ile yüklenecek -->
-                </div>
+                    </div>
 
-                <!-- Yeni Yorum Ekleme Formu -->
                 <form id="comment-form">
                     <h3>Yorum Bırakın</h3>
                     <div class="form-group">
@@ -130,7 +115,6 @@
                         <textarea id="comment-text" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="cta-button" id="comment-submit-btn">Yorumu Gönder</button>
-                    <!-- Form durum mesajı (Başarılı, Hata vb.) -->
                     <div id="form-status-message"></div>
                 </form>
                 
@@ -138,12 +122,10 @@
         </section>
 
 
-        <!-- SIKÇA SORULAN SORULAR (SSS) -->
         <section id="sss" class="faq-section">
             <div class="container">
                 <h2>Sıkça Sorulan Sorular</h2>
                 <div class="faq-container">
-                    <!-- ... SSS içeriği (değişiklik yok) ... -->
                     <div class="faq-item"><button class="faq-question">Ödemeyi nasıl yapıyoruz?</button><div class="faq-answer"><p>Sipariş listenizi WhatsApp üzerinden bize ilettikten sonra, size ödeme için IBAN bilgilerimizi iletiyoruz. Ödemenizi Havale/EFT yoluyla güvenle yapabilirsiniz.</p></div></div>
                     <div class="faq-item"><button class="faq-question">Kargo gönderimi nasıl oluyor?</button><div class="faq-answer"><p>Siparişinizi onayladıktan sonra, ürünlerinizi özenle paketleyip (kırılacaklar için özel koruma ile) en geç 2 iş günü içinde anlaşmalı kargo firmamıza teslim ediyoruz. Kargo takip numaranızı sizinle paylaşıyoruz.</p></div></div>
                     <div class="faq-item"><button class="faq-question">Ürünleri nasıl saklamalıyım?</button><div class="faq-answer"><p><strong>Zeytinyağı:</strong> Serin, kuru ve doğrudan güneş ışığı almayan bir yerde, ağzı kapalı şekilde saklayınız.<br><strong>Nar Ekşisi:</strong> Buzdolabında veya serin bir yerde muhafaza edebilirsiniz.<br><strong>Şenköy Peyniri:</strong> Size ulaştıktan sonra buzdolabında saklamalısınız.<br><strong>Kuru İncir & Sumak & Pekmez:</strong> Serin ve nemsiz bir dolapta, ağzı kapalı olarak saklayabilirsiniz.</p></div></div>
@@ -151,9 +133,7 @@
             </div>
         </section>
 
-        <!-- Sipariş (Call to Action) -->
         <section id="siparis" class="cta-section">
-            <!-- ... İçerik (değişiklik yok) ... -->
             <div class="container">
                 <h2>Lezzeti Evinize Taşıyın</h2>
                 <p>
@@ -173,26 +153,19 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer>
-            <!-- ... İçerik (değişiklik yok) ... -->
             <div class="container">
                 <p>&copy; 2025 Şenköy Doğal Ürünleri. Tüm hakları saklıdır.</p>
                 <p>İletişim: info@senkoydogal.com</p> 
             </div>
         </footer>
 
-        <!-- Yüzen Sepet İkonu -->
         <div id="cart-button">
-             <!-- ... İçerik (değişiklik yok) ... -->
-            🛒
+             🛒
             <span id="cart-count">0</span>
         </div>
 
-    </div> <!-- #main-content Bitişi -->
-
-    <!-- JavaScript Dosyası (v11) -->
-    <script src="script.js?v=11" defer></script>
+    </div> <script src="script.js?v=12" defer></script>
 
 </body>
 </html>

@@ -163,33 +163,45 @@ header nav a:hover { color: #d9534f; }
 .add-to-cart-btn:hover { background-color: #1a3311; }
 .add-to-cart-btn.added { background-color: #d9534f; }
 
-/* --- MÜŞTERİ YORUMLARI STİLLERİ --- */
+/* ***** MÜŞTERİ YORUMLARI STİLLERİ (GÜNCELLENDİ) ***** */
 #yorumlar .container {
-    max-width: 800px;
+    max-width: 1100px; /* Eski container genişliğine döndürüldü */
 }
+
+/* Yorum Listeleme Alanı - GRİD OLARAK GÜNCELLENDİ */
 #comments-list {
-    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 Sütunlu Grid */
+    gap: 30px;
     margin-bottom: 40px;
+    text-align: left;
 }
 .comment-item {
     background-color: #fcfaf8;
     border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    /* Kartların aynı hizada durması için flex ayarları */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .comment-item p {
     font-size: 1.1rem;
     font-style: italic;
     color: #555;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Yorum metninin alanı kaplamasını sağlar */
 }
 .comment-item span {
     font-size: 1rem;
     font-weight: 700;
     color: #2c541d;
+    text-align: right; /* Yazarı sağa hizala */
 }
+
+/* Yeni Yorum Formu Stilleri - (GÜNCELLENDİ) */
 #comment-form {
     background-color: #fcfaf8;
     border: 1px solid #eee;
@@ -197,6 +209,9 @@ header nav a:hover { color: #d9534f; }
     padding: 30px;
     text-align: left;
     margin-top: 40px;
+    max-width: 800px; /* Form, grid'den bağımsız olarak ortada kalsın */
+    margin-left: auto;
+    margin-right: auto;
 }
 #comment-form h3 {
     text-align: center;
@@ -239,8 +254,10 @@ header nav a:hover { color: #d9534f; }
 }
 #form-status-message.success { color: #2c541d; }
 #form-status-message.error { color: #d9534f; }
+/* ***** YORUM STİLLERİ BİTTİ ***** */
 
-/* --- SSS (FAQ) BÖLÜMÜ STİLLERİ --- */
+
+/* ***** SSS (FAQ) BÖLÜMÜ STİLLERİ ***** */
 .faq-section {
     background-color: #fff;
 }
@@ -302,6 +319,7 @@ header nav a:hover { color: #d9534f; }
 .faq-answer p {
     padding: 25px 0;
 }
+/* ***** SSS STİLLERİ BİTTİ ***** */
 
 /* --- Sipariş (CTA) Bölümü --- */
 .cta-section { background-color: #2c541d; color: #fff; text-align: center; }
@@ -348,11 +366,11 @@ footer p { margin: 5px 0; }
 
 
 /* =================================================
- YENİ EKLENEN ADMİN PANELİ STİLLERİ
+ ADMİN PANELİ STİLLERİ
 =================================================
 */
 .admin-body {
-    background-color: #f0f2f5; /* Admin paneli için farklı arka plan */
+    background-color: #f0f2f5;
 }
 #password-prompt {
     display: flex;
@@ -396,7 +414,7 @@ footer p { margin: 5px 0; }
     font-weight: 600;
     font-size: 0.9rem;
     margin-top: 15px;
-    margin-bottom: 0; /* p'den gelen margin'i sıfırla */
+    margin-bottom: 0;
 }
 
 .admin-header {
@@ -497,7 +515,9 @@ footer p { margin: 5px 0; }
     #cart-count { width: 20px; height: 20px; font-size: 11px; }
 
     /* Yorumlar ve SSS için mobil ayarlar */
-    #yorumlar .container { max-width: 100%; }
+    #comments-list {
+        grid-template-columns: 1fr; /* Yorumları mobilde alt alta diz */
+    }
     #comment-form { padding: 20px; }
     .faq-question {
         font-size: 1.1rem;
