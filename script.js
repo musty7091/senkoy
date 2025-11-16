@@ -1,7 +1,29 @@
-// Bu kod, tüm sayfanın yüklenmesini bekler
+// Kod, sayfanın tamamen yüklenmesini bekler
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Gerekli HTML elementlerini seçiyoruz
+    // --- GİRİŞ EKRANI (SPLASH SCREEN) KODU ---
+    // (index.html'den buraya taşındı)
+    const mainContent = document.getElementById('main-content');
+    const enterButton = document.getElementById('enter-button');
+    const splashScreen = document.getElementById('splash-screen');
+
+    if (mainContent && enterButton && splashScreen) {
+        mainContent.style.display = 'none';
+        
+        enterButton.addEventListener('click', function() {
+            splashScreen.style.transition = 'opacity 0.5s ease-out';
+            splashScreen.style.opacity = '0';
+            mainContent.style.display = 'block';
+            
+            setTimeout(function() {
+                splashScreen.style.display = 'none';
+            }, 500); // 0.5 saniye
+        });
+    }
+    // --- GİRİŞ EKRANI KODU BİTTİ ---
+
+
+    // --- SEPET SİSTEMİ KODU ---
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
     const whatsappOrderButton = document.getElementById('whatsapp-order-button');
     const cartButton = document.getElementById('cart-button');
@@ -12,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sepet ikonundaki sayıyı güncelleyen fonksiyon
     function updateCartCount() {
-        // Sepette kaç *çeşit* ürün olduğunu sayar
         const totalItems = Object.keys(cart).length; 
         cartCount.textContent = totalItems;
         
@@ -28,73 +49,63 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', (event) => {
             const card = event.target.closest('.product-card');
             const productName = card.dataset.name;
-            const productPrice = parseInt(card.dataset.price, 10);
+            // FİYAT SATIRI KALDIRILDI
             const quantityInput = card.querySelector('.quantity-input');
             const quantity = parseInt(quantityInput.value, 10);
 
             if (quantity > 0) {
-                // Sepete ürünü ekle veya adedini güncelle
+                // Sepete ürünü ekle (Sadece adet bilgisi)
                 cart[productName] = {
-                    quantity: quantity,
-                    price: productPrice
+                    quantity: quantity
+                    // FİYAT BİLGİSİ KALDIRILDI
                 };
                 
-                // Butonun metnini ve stilini geçici olarak değiştir
                 button.textContent = 'Eklendi!';
                 button.classList.add('added');
                 
-                // 1.5 saniye sonra eski haline döndür
                 setTimeout(() => {
                     button.textContent = 'Listeye Ekle';
                     button.classList.remove('added');
                 }, 1500);
 
             } else {
-                // Eğer adet 0 veya negatifse sepetten çıkar
                 delete cart[productName];
             }
 
-            // Sepeti hafızaya (localStorage) kaydet
             localStorage.setItem('senkoyCart', JSON.stringify(cart));
-            // İkondaki sayıyı güncelle
             updateCartCount();
         });
     });
 
     // Ana "Sipariş Listemi Gönder" (WhatsApp) butonuna tıklandığında
     whatsappOrderButton.addEventListener('click', (event) => {
-        // Sepeti hafızdan tekrar oku
         cart = JSON.parse(localStorage.getItem('senkoyCart')) || {};
         const productNames = Object.keys(cart);
 
-        // Sepet boşsa, normal "Merhaba" mesajıyla devam et
         if (productNames.length === 0) {
-            // Hiçbir şey yapma, butonun normal linkine gitmesine izin ver
-            return;
+            return; // Sepet boşsa, normal "Merhaba" mesajıyla devam et
         }
 
         // Sepet doluysa, butonun normal linkine gitmesini ENGELLE
         event.preventDefault();
 
         let message = "Merhaba, Şenköy Doğal ürünlerinizden sipariş vermek istiyorum:\n\n*SİPARİŞ LİSTEM:*\n";
-        let totalPrice = 0;
+        // TOPLAM FİYAT DEĞİŞKENİ KALDIRILDI
 
-        // Mesajı ve toplam fiyatı oluştur
+        // Mesajı oluştur
         productNames.forEach(name => {
             const item = cart[name];
-            const itemTotal = item.quantity * item.price;
-            message += `- ${item.quantity} x ${name} (${itemTotal} TL)\n`;
-            totalPrice += itemTotal;
+            // FİYAT HESAPLAMALARI KALDIRILDI
+            message += `- ${item.quantity} x ${name}\n`;
         });
 
-        message += `\n*Toplam Tutar:* ${totalPrice} TL\n\n(Adres ve ödeme bilgileri için sizinle iletişime geçeceğim.)`;
+        // TOPLAM TUTAR MESAJI KALDIRILDI, YENİ MESAJ EKLENDİ
+        message += `\n(Listem bu şekildedir. Fiyat ve teslimat bilgisi bekliyorum.)`;
 
-        // WhatsApp linkini oluştur (Telefon numarasını ve mesajı birleştir)
         const whatsappNumber = "905449632683";
         const encodedMessage = encodeURIComponent(message);
         const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-        // Müşteriyi bu yeni linke yönlendir
         window.open(whatsappLink, '_blank');
         
         // Siparişi gönderdikten sonra sepeti ve hafızayı temizle

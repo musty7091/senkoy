@@ -141,12 +141,11 @@ header nav a:hover { color: #d9534f; }
     padding: 0 25px 20px 25px;
     flex-grow: 1; /* Açıklama alanının esnemesini sağlar */
 }
-.product-card .price {
-    display: block; font-size: 1.3rem; font-weight: 700;
-    color: #2c541d; padding: 0 25px 20px 25px;
-}
 
-/* YENİ EKLENEN SİPARİŞ ALANI STİLLERİ */
+/* FİYAT STİLİ KALDIRILDI */
+/* .product-card .price { ... } bloğu silindi */
+
+/* SİPARİŞ ALANI STİLLERİ */
 .product-card-actions {
     display: flex;
     justify-content: space-between;
@@ -202,7 +201,7 @@ footer {
 }
 footer p { margin: 5px 0; }
 
-/* YENİ EKLENEN YÜZEN SEPET İKONU */
+/* YÜZEN SEPET İKONU */
 #cart-button {
     position: fixed;
     bottom: 20px;
