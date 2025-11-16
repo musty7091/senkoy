@@ -163,17 +163,96 @@ header nav a:hover { color: #d9534f; }
 .add-to-cart-btn:hover { background-color: #1a3311; }
 .add-to-cart-btn.added { background-color: #d9534f; }
 
-/* ***** MÜŞTERİ YORUMLARI STİLLERİ (GÜNCELLENDİ) ***** */
-/* giscus eklentisi için konteyneri daraltıyoruz */
+/* ***** MÜŞTERİ YORUMLARI STİLLERİ ***** */
 #yorumlar .container {
-    max-width: 900px; /* giscus'un çok genişlemesini önler */
+    max-width: 800px; /* Yorum ve form alanını okunaklı tutar */
+}
+
+/* Yorum Listeleme Alanı */
+#comments-list {
+    text-align: left;
+    margin-bottom: 40px;
+}
+.comment-item {
+    background-color: #fcfaf8;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.comment-item p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+.comment-item span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c541d;
+}
+
+/* Yeni Yorum Formu Stilleri */
+#comment-form {
+    background-color: #fcfaf8;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: left;
+    margin-top: 40px;
+}
+#comment-form h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 25px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.form-group textarea {
+    resize: vertical; /* Sadece dikeyde büyüsün */
+}
+#comment-form .cta-button {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 15px;
+}
+#form-status-message {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+#form-status-message.success {
+    color: #2c541d; /* Koyu yeşil */
+}
+#form-status-message.error {
+    color: #d9534f; /* Nar kırmızısı */
 }
 /* ***** YORUM STİLLERİ BİTTİ ***** */
 
 
 /* ***** SSS (FAQ) BÖLÜMÜ STİLLERİ ***** */
 .faq-section {
-    background-color: #fff; /* Beyaz arka plan */
+    background-color: #fff;
 }
 .faq-container {
     max-width: 800px;
@@ -201,12 +280,11 @@ header nav a:hover { color: #d9534f; }
     cursor: pointer;
     transition: background-color 0.3s ease;
     position: relative;
-    padding-right: 50px; /* Artı işareti için yer */
+    padding-right: 50px;
 }
 .faq-question:hover {
     background-color: #fcfaf8;
 }
-/* SSS Soru sonuna +/- işareti ekleme */
 .faq-question::after {
     content: '+';
     font-size: 1.5rem;
@@ -219,15 +297,15 @@ header nav a:hover { color: #d9534f; }
     transition: transform 0.2s ease;
 }
 .faq-question.active::after {
-    content: '−'; /* Eksi işareti */
+    content: '−';
     transform: translateY(-50%) rotate(180deg);
 }
 .faq-answer {
-    background-color: #fcfaf8; /* Cevap arka planı */
+    background-color: #fcfaf8;
     padding: 0px 30px;
     font-size: 1.05rem;
     line-height: 1.7;
-    max-height: 0; /* Başlangıçta kapalı */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
@@ -235,7 +313,6 @@ header nav a:hover { color: #d9534f; }
     padding: 25px 0;
 }
 /* ***** SSS STİLLERİ BİTTİ ***** */
-
 
 /* --- Sipariş (CTA) Bölümü --- */
 .cta-section { background-color: #2c541d; color: #fff; text-align: center; }
@@ -299,21 +376,13 @@ footer p { margin: 5px 0; }
     #cart-count { width: 20px; height: 20px; font-size: 11px; }
 
     /* Yorumlar ve SSS için mobil ayarlar */
-    #yorumlar .container {
-        max-width: 100%; /* Mobilde tam genişlik */
-    }
+    #yorumlar .container { max-width: 100%; }
+    #comment-form { padding: 20px; }
     .faq-question {
         font-size: 1.1rem;
-        padding: 15px 45px 15px 20px; /* Sağa 45px (ikon için), sola 20px */
+        padding: 15px 45px 15px 20px;
     }
-    .faq-question::after {
-        right: 20px;
-    }
-    .faq-answer {
-        padding: 0 20px;
-    }
-    .faq-answer p {
-        padding: 20px 0;
-        font-size: 1rem;
-    }
+    .faq-question::after { right: 20px; }
+    .faq-answer { padding: 0 20px; }
+    .faq-answer p { padding: 20px 0; font-size: 1rem; }
 }
