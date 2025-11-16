@@ -163,41 +163,15 @@ header nav a:hover { color: #d9534f; }
 .add-to-cart-btn:hover { background-color: #1a3311; }
 .add-to-cart-btn.added { background-color: #d9534f; }
 
-/* ***** YENİ STİLLER: MÜŞTERİ YORUMLARI ***** */
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* 3 sütunlu yapı */
-    gap: 30px;
-    margin-top: 40px;
-}
-.testimonial-card {
-    background-color: #fcfaf8; /* Hafif krem arka plan */
-    border: 1px solid #eee;
-    padding: 30px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
-.testimonial-quote {
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #555;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    flex-grow: 1;
-}
-.testimonial-author {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #2c541d; /* Koyu yeşil */
-    text-align: right;
+/* ***** MÜŞTERİ YORUMLARI STİLLERİ (GÜNCELLENDİ) ***** */
+/* giscus eklentisi için konteyneri daraltıyoruz */
+#yorumlar .container {
+    max-width: 900px; /* giscus'un çok genişlemesini önler */
 }
 /* ***** YORUM STİLLERİ BİTTİ ***** */
 
 
-/* ***** YENİ STİLLER: SSS (FAQ) BÖLÜMÜ ***** */
+/* ***** SSS (FAQ) BÖLÜMÜ STİLLERİ ***** */
 .faq-section {
     background-color: #fff; /* Beyaz arka plan */
 }
@@ -325,8 +299,8 @@ footer p { margin: 5px 0; }
     #cart-count { width: 20px; height: 20px; font-size: 11px; }
 
     /* Yorumlar ve SSS için mobil ayarlar */
-    .testimonial-grid {
-        grid-template-columns: 1fr; /* Yorumları alt alta diz */
+    #yorumlar .container {
+        max-width: 100%; /* Mobilde tam genişlik */
     }
     .faq-question {
         font-size: 1.1rem;

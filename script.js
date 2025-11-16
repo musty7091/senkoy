@@ -110,28 +110,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- SEPET SİSTEMİ KODU BİTTİ ---
 
 
-    // ***** YENİ KOD: SSS (FAQ) AKORDEON *****
+    // --- SSS (FAQ) AKORDEON KODU ---
     const faqQuestions = document.querySelectorAll('.faq-question');
 
     faqQuestions.forEach(button => {
         button.addEventListener('click', () => {
             const answer = button.nextElementSibling; // Butondan sonraki cevap elementi
             
-            // Butona 'active' class'ı ekle/kaldır (CSS'te +/- ikonunu değiştirir)
             button.classList.toggle('active');
 
-            // Cevabı aç/kapat
             if (answer.style.maxHeight) {
-                // Cevap açıksa, kapat
                 answer.style.maxHeight = null;
-                answer.style.padding = "0px 30px"; // Kapanırken padding'i sıfırla
+                answer.style.padding = "0px 30px"; 
             } else {
-                // Cevap kapalıysa, aç
-                answer.style.padding = "25px 30px"; // Önce padding ver
-                answer.style.maxHeight = answer.scrollHeight + "px"; // Sonra yüksekliğini ayarla
+                answer.style.padding = "25px 30px"; 
+                answer.style.maxHeight = answer.scrollHeight + "px"; 
             }
         });
     });
-    // ***** SSS KODU BİTTİ *****
+    // --- SSS KODU BİTTİ ---
 
 });
