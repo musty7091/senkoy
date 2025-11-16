@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
                 <p>Katkısız, doğal ve gelensek lezzetler. Sınırlı üretim zeytinyağı ve nar ekşisi.</p>
                 <a href="#siparis" class="cta-button">Sipariş Verin</a>
             </div>
-            </section>
+        </section>
 
         <section id="hikayemiz" class="content-section">
             <div class="container">
@@ -79,82 +79,101 @@
                 
                 <h3 class="product-category-title">Bizim Bahçemizden</h3>
                 <div class="product-grid">
-                    <div class="product-card">
+                    
+                    <div class="product-card" data-name="Doğal Zeytinyağı (1L)" data-price="800">
                         <img src="img/zeytinyagi.jpg" alt="Doğal Soğuk Sıkım Zeytinyağı">
                         <h3>Doğal Zeytinyağı</h3>
-                        <p>
-                            Kendi zeytin ağaçlarımızdan, mevsiminde elle toplanan zeytinlerden 
-                            elde edilen soğuk sıkım, düşük asitli zeytinyağı. 
-                        </p>
-                        <span class="price">1L Fiyatı: (Lütfen özelden sorunuz)</span>
+                        <p>Kendi zeytin ağaçlarımızdan, soğuk sıkım, düşük asitli zeytinyağı.</p>
+                        <span class="price">1L Fiyatı: 800 TL</span>
+                        
+                        <div class="product-card-actions">
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="add-to-cart-btn">Listeye Ekle</button>
+                        </div>
                     </div>
 
-                    <div class="product-card">
+                    <div class="product-card" data-name="Katkısız Nar Ekşisi (500g)" data-price="400">
                         <img src="img/nareksisi.jpg" alt="Katkısız Ev Yapımı Nar Ekşisi">
                         <h3>Katkısız Nar Ekşisi</h3>
-                        <p>
-                            Bahçemizin narlarından, odun ateşinde, sadece nar suyu kaynatılarak 
-                            elde edilen, yoğun kıvamlı, %100 doğal nar ekşisi. 
-                        </p>
-                        <span class="price">500g Fiyatı: (Lütfen özelden sorunuz)</span>
+                        <p>Bahçemizin narlarından, odun ateşinde, %100 doğal nar ekşisi.</p>
+                        <span class="price">500g Fiyatı: 400 TL</span>
+                        
+                        <div class="product-card-actions">
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="add-to-cart-btn">Listeye Ekle</button>
+                        </div>
                     </div>
                 </div>
 
-                <h3 class="product-category-title">Köy Halkımızın Doğal Ürünleri</h3>
+                <h3 class="product-category-title">Köyümüzden Güvendiklerimiz</h3>
                 <div class="product-grid">
                     
-                    <div class="product-card">
+                    <div class="product-card" data-name="Şenköy Peyniri (1Kg)" data-price="350">
                         <img src="img/peynir.jpg" alt="Doğal Şenköy Peyniri">
                         <h3>Şenköy Peyniri</h3>
-                        <p>
-                            Köyümüzün en meşhur lezzeti. Geleneksel yöntemlerle, 
-                            doğal mayayla hazırlanan taze ve lezzetli peynirimiz.
-                        </p>
-                        <span class="price">1Kg Fiyatı: (Lütfen özelden sorunuz)</span>
+                        <p>Köyümüzün en meşhur lezzeti. Geleneksel yöntemlerle, doğal maya.</p>
+                        <span class="price">1Kg Fiyatı: 350 TL</span>
+
+                        <div class="product-card-actions">
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="add-to-cart-btn">Listeye Ekle</button>
+                        </div>
                     </div>
 
-                    <div class="product-card">
+                    <div class="product-card" data-name="Kuru İncir (1Kg)" data-price="300">
                         <img src="img/incir.jpg" alt="Doğal Kuru İncir">
                         <h3>Kuru İncir</h3>
-                        <p>
-                            Güneşte doğal yollarla kurutulmuş, tatlı ve besleyici 
-                            dağ incirleri. Katkısız ve şeker ilavesizdir.
-                        </p>
-                        <span class="price">1Kg Fiyatı: (Lütfen özelden sorunuz)</span>
+                        <p>Güneşte doğal yollarla kurutulmuş, tatlı ve besleyici dağ incirleri.</p>
+                        <span class="price">1Kg Fiyatı: 300 TL</span>
+
+                        <div class="product-card-actions">
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="add-to-cart-btn">Listeye Ekle</button>
+                        </div>
                     </div>
 
-                    <div class="product-card">
+                    <div class="product-card" data-name="Pekmez (1Kg)" data-price="250">
                         <img src="img/pekmez.jpg" alt="Ev Yapımı Pekmez">
                         <h3>Pekmez</h3>
-                        <p>
-                            Köyümüzün üzüm veya keçiboynuzu meyvelerinden, odun ateşinde 
-                            kaynatılarak elde edilen %100 doğal pekmez.
-                        </p>
-                        <span class="price">1Kg Fiyatı: (Lütfen özelden sorunuz)</span>
+                        <p>Köyümüzün üzümlerinden, odun ateşinde, %100 doğal pekmez.</p>
+                        <span class="price">1Kg Fiyatı: 250 TL</span>
+
+                        <div class="product-card-actions">
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="add-to-cart-btn">Listeye Ekle</button>
+                        </div>
                     </div>
 
-                    <div class="product-card">
+                    <div class="product-card" data-name="Sumak (250g)" data-price="150">
                         <img src="img/sumak.jpg" alt="Doğal Sumak Ekşisi">
                         <h3>Sumak</h3>
-                        <p>
-                            Dağlarımızdan toplanan sumak meyvelerinden doğal 
-                            yöntemlerle çekilmiş, yemeklerinize ekşilik katacak saf sumak.
-                        </p>
-                        <span class="price">250g Fiyatı: (Lütfen özelden sorunuz)</span>
+                        <p>Dağlarımızdan toplanan sumak meyvelerinden çekilmiş saf sumak.</p>
+                        <span class="price">250g Fiyatı: 150 TL</span>
+
+                        <div class="product-card-actions">
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="add-to-cart-btn">Listeye Ekle</button>
+                        </div>
                     </div>
 
-                </div> </div> </section> <section id="siparis" class="cta-section">
+                </div> 
+            </div> 
+        </section> 
+
+
+        <section id="siparis" class="cta-section">
             <div class="container">
                 <h2>Lezzeti Evinize Taşıyın</h2>
                 <p>
-                    Sınırlı sayıdaki ürünlerimizden sipariş vermek için 
+                    Ürünlerinizi listeye eklediyseniz, siparişinizi tamamlamak için 
                     aşağıdaki butona tıklayarak bize WhatsApp üzerinden ulaşabilirsiniz.
                 </p>
                 
                 <a href="https://wa.me/905449632683?text=Merhaba%2C+Şenköy+doğal+ürünlerinizden+sipariş+vermek+istiyorum." 
                    target="_blank" 
-                   class="cta-button-large">
-                    WhatsApp ile Sipariş Ver
+                   class="cta-button-large"
+                   id="whatsapp-order-button">
+                    Sipariş Listemi Gönder
                 </a>
                 <p style="margin-top: 20px; font-size: 16px;">
                     Veya bizi sosyal medyadan takip edin: 
@@ -170,24 +189,23 @@
             </div>
         </footer>
 
-    </div> <script>
-        // Sayfa yüklendiğinde ana içeriği gizle
-        document.getElementById('main-content').style.display = 'none';
+        <div id="cart-button">
+            🛒
+            <span id="cart-count">0</span>
+        </div>
 
-        // Giriş butonuna tıklandığında
+    </div> <script src="script.js?v=6"></script>
+    
+    <script>
+        document.getElementById('main-content').style.display = 'none';
         document.getElementById('enter-button').addEventListener('click', function() {
-            // Giriş ekranını soluklaşarak gizle
             var splash = document.getElementById('splash-screen');
             splash.style.transition = 'opacity 0.5s ease-out';
             splash.style.opacity = '0';
-            
-            // Ana içeriği göster
             document.getElementById('main-content').style.display = 'block';
-
-            // Animasyon bittikten sonra giriş ekranını DOM'dan kaldır
             setTimeout(function() {
                 splash.style.display = 'none';
-            }, 500); // 0.5 saniye
+            }, 500); 
         });
     </script>
 
