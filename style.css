@@ -98,7 +98,7 @@ header nav a:hover { color: #d9534f; }
 }
 
 /* --- Genel İçerik Bölümleri --- */
-.content-section, .product-section, .cta-section { padding: 80px 0; }
+.content-section, .product-section, .cta-section, .faq-section { padding: 80px 0; }
 .content-section { background-color: #fff; text-align: center; }
 
 /* --- Ürünler Bölümü --- */
@@ -122,8 +122,7 @@ header nav a:hover { color: #d9534f; }
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     overflow: hidden; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Kart içeriğini dikeyde yaymak için */
-    flex-direction: column;
+    display: flex; flex-direction: column;
 }
 .product-card:hover {
     transform: translateY(-5px);
@@ -141,11 +140,6 @@ header nav a:hover { color: #d9534f; }
     padding: 0 25px 20px 25px;
     flex-grow: 1; /* Açıklama alanının esnemesini sağlar */
 }
-
-/* FİYAT STİLİ KALDIRILDI */
-/* .product-card .price { ... } bloğu silindi */
-
-/* SİPARİŞ ALANI STİLLERİ */
 .product-card-actions {
     display: flex;
     justify-content: space-between;
@@ -154,34 +148,120 @@ header nav a:hover { color: #d9534f; }
     gap: 10px;
 }
 .quantity-input {
-    width: 60px;
-    padding: 10px;
-    font-size: 1rem;
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    width: 60px; padding: 10px;
+    font-size: 1rem; text-align: center;
+    border: 1px solid #ddd; border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
 }
 .add-to-cart-btn {
-    flex-grow: 1; /* Butonun kalan alanı kaplamasını sağlar */
-    padding: 12px 10px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    background-color: #2c541d; /* Koyu yeşil */
-    color: #fff;
+    flex-grow: 1; padding: 12px 10px;
+    font-size: 0.9rem; font-weight: 600;
+    background-color: #2c541d; color: #fff;
+    border: none; border-radius: 5px;
+    cursor: pointer; transition: background-color 0.3s ease;
+}
+.add-to-cart-btn:hover { background-color: #1a3311; }
+.add-to-cart-btn.added { background-color: #d9534f; }
+
+/* ***** YENİ STİLLER: MÜŞTERİ YORUMLARI ***** */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 sütunlu yapı */
+    gap: 30px;
+    margin-top: 40px;
+}
+.testimonial-card {
+    background-color: #fcfaf8; /* Hafif krem arka plan */
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+.testimonial-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+.testimonial-author {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c541d; /* Koyu yeşil */
+    text-align: right;
+}
+/* ***** YORUM STİLLERİ BİTTİ ***** */
+
+
+/* ***** YENİ STİLLER: SSS (FAQ) BÖLÜMÜ ***** */
+.faq-section {
+    background-color: #fff; /* Beyaz arka plan */
+}
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.faq-item {
+    border-bottom: 1px solid #eee;
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+.faq-question {
+    background-color: #fff;
     border: none;
-    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+    padding: 20px 30px;
+    font-family: 'Merriweather', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    position: relative;
+    padding-right: 50px; /* Artı işareti için yer */
 }
-.add-to-cart-btn:hover {
-    background-color: #1a3311;
+.faq-question:hover {
+    background-color: #fcfaf8;
 }
-/* Butona tıklandığında (JS ile eklenecek) */
-.add-to-cart-btn.added {
-    background-color: #d9534f; /* Nar kırmızısı */
-    content: 'Eklendi!';
+/* SSS Soru sonuna +/- işareti ekleme */
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #2c541d;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
 }
+.faq-question.active::after {
+    content: '−'; /* Eksi işareti */
+    transform: translateY(-50%) rotate(180deg);
+}
+.faq-answer {
+    background-color: #fcfaf8; /* Cevap arka planı */
+    padding: 0px 30px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-height: 0; /* Başlangıçta kapalı */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+.faq-answer p {
+    padding: 25px 0;
+}
+/* ***** SSS STİLLERİ BİTTİ ***** */
+
 
 /* --- Sipariş (CTA) Bölümü --- */
 .cta-section { background-color: #2c541d; color: #fff; text-align: center; }
@@ -206,37 +286,23 @@ footer p { margin: 5px 0; }
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #2c541d; /* Koyu yeşil */
-    color: #fff;
+    width: 60px; height: 60px;
+    background-color: #2c541d; color: #fff;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; justify-content: center; align-items: center;
     font-size: 24px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    cursor: pointer;
-    z-index: 999;
+    cursor: pointer; z-index: 999;
     transition: transform 0.3s ease;
 }
-#cart-button:hover {
-    transform: scale(1.1);
-}
+#cart-button:hover { transform: scale(1.1); }
 #cart-count {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #d9534f; /* Nar kırmızısı */
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    width: 22px;
-    height: 22px;
+    position: absolute; top: 0; right: 0;
+    background-color: #d9534f; color: #fff;
+    font-size: 12px; font-weight: 700;
+    width: 22px; height: 22px;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; justify-content: center; align-items: center;
     border: 2px solid #fff;
 }
 
@@ -257,4 +323,23 @@ footer p { margin: 5px 0; }
     .add-to-cart-btn { width: 100%; font-size: 1rem; }
     #cart-button { width: 50px; height: 50px; font-size: 20px; }
     #cart-count { width: 20px; height: 20px; font-size: 11px; }
+
+    /* Yorumlar ve SSS için mobil ayarlar */
+    .testimonial-grid {
+        grid-template-columns: 1fr; /* Yorumları alt alta diz */
+    }
+    .faq-question {
+        font-size: 1.1rem;
+        padding: 15px 45px 15px 20px; /* Sağa 45px (ikon için), sola 20px */
+    }
+    .faq-question::after {
+        right: 20px;
+    }
+    .faq-answer {
+        padding: 0 20px;
+    }
+    .faq-answer p {
+        padding: 20px 0;
+        font-size: 1rem;
+    }
 }
