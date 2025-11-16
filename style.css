@@ -216,6 +216,26 @@ header nav a:hover {
     background-color: #fcfaf8;
 }
 
+/* YENİ EKLENEN KATEGORİ BAŞLIĞI STİLİ */
+.product-category-title {
+    font-size: 2.2rem; /* Ana başlıktan (h2) biraz küçük */
+    font-family: 'Merriweather', serif;
+    color: #444; /* Koyu gri */
+    text-align: center;
+    margin-top: 50px; /* Kategoriler arasına boşluk koy */
+    margin-bottom: 30px;
+    font-weight: 700;
+    border-bottom: 2px solid #eee; /* İnce bir ayraç */
+    padding-bottom: 15px;
+}
+
+/* İlk kategori başlığının üst boşluğunu kaldır */
+.product-section .product-category-title:first-of-type {
+    margin-top: 10px;
+}
+/* ------------------------------------- */
+
+
 .product-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 sütunlu yapı */
@@ -242,7 +262,7 @@ header nav a:hover {
     object-fit: cover; 
 }
 
-.product-card h3 {
+.product-card h3 { /* Bu, kartların içindeki ürün adlarıdır */
     font-size: 1.8rem;
     color: #333;
     padding: 25px 25px 10px 25px;
@@ -310,11 +330,9 @@ footer p {
         font-size: 2rem;
     }
     
-    /* YENİ EKLENEN KURAL: Mobil arka plan hatasını düzeltir */
     .hero {
-        background-attachment: scroll; /* 'fixed' olan ayarı 'scroll' olarak değiştirir */
+        background-attachment: scroll; /* Mobil arka plan hatasını düzeltir */
     }
-    /* -------------------------------------------------- */
 
     .hero {
         height: 70vh;
@@ -341,5 +359,10 @@ footer p {
 
     .splash-logo {
         max-width: 300px; /* Mobilde giriş logosu */
+    }
+
+    /* Mobil için kategori başlıkları */
+    .product-category-title {
+        font-size: 1.8rem;
     }
 }
